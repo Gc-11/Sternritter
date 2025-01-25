@@ -17,17 +17,17 @@
             const loggedInUser = localStorage.getItem("loggedInUser");
             const userType = localStorage.getItem("userType");
 
-            // You can use loggedInUser and userType as needed, e.g., for personalized content or access control
+          
             if (loggedInUser && userType) {
                 console.log(`${loggedInUser} logged in as ${userType}`);
             } else {
-                // Redirect back to login if no user is logged in
+        
                 window.location.href = "login.html";
             }
         });
     </script>
 
-    <!-- Main Navigation -->
+ 
     <div>
         <nav>
             <ul align="center">
@@ -43,9 +43,9 @@
         </nav>
     </div>
 
-    <!-- Main Content Section -->
+   
     <main>
-        <!-- Restaurant Search Section -->
+    
         <section id="restaurants">
             <h2>Search Restaurants</h2>
             <input type="text" id="searchInput" placeholder="Search by name, cuisine, or location">
@@ -53,7 +53,7 @@
             <div id="restaurantList"></div>
         </section>
 
-        <!-- Booking Section -->
+    
         <section id="booking">
             <h2>Book a Table</h2>
             <form id="bookingForm">
@@ -65,7 +65,7 @@
             <p id="bookingMessage"></p>
         </section>
 
-        <!-- Bookings Table Section -->
+  
         <section id="bookings">
             <h2>Bookings</h2>
             <table>
@@ -81,19 +81,17 @@
                     </tr>
                 </thead>
                 <tbody id="bookingTable">
-                    <!-- Booking data will be dynamically added here -->
+                
                 </tbody>
             </table>
         </section>
 
-        <!-- Admin Dashboard Section -->
         <section id="admin">
             <h2>Admin Dashboard</h2>
             <button onclick="loadRestaurantData()">Load Restaurants</button>
             <div id="adminData"></div>
         </section>
 
-        <!-- Profile Section -->
         <section id="profile" style="display:none;">
             <h2>Restaurant Profile</h2>
             <div id="profileInfo">
@@ -108,7 +106,6 @@
         </section>
     </main>
 
-    <!-- Edit Booking Modal -->
     <div id="editBookingModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>

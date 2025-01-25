@@ -6,19 +6,19 @@
     <title>Restaurant Booking Platform</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* General Styles */
+      
         body, html {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #000; /* Black background */
-            color: #fff; /* White text */
+            background-color: #000; /
+            color: #fff;
         }
 
         header {
             background-color: #222;
-            color: #FFD700; /* Yellow text */
+            color: #FFD700;
             padding: 20px 10px;
             text-align: center;
             border-bottom: 3px solid #FFD700;
@@ -99,13 +99,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #000; 
+    color: #fff; 
 }
 
 header {
     background-color: #222;
-    color: #FFD700; /* Yellow text */
+    color: #FFD700; 
     padding: 20px 10px;
     text-align: center;
     border-bottom: 3px solid #FFD700;
@@ -157,7 +157,7 @@ h2 {
 
 #capacity-result {
     margin-top: 20px;
-    color: #FFD700; /* Yellow text for result */
+    color: #FFD700;
     font-weight: bold;
 }
 
@@ -173,7 +173,7 @@ h2 {
         </nav>
     </header>
     <main>
-        <!-- Booking Form Section -->
+
         <section id="booking-form">
             <h2>Restaurant Bookings</h2>
             <form id="restaurant-form">
@@ -189,7 +189,7 @@ h2 {
         <p>©2025CESTRO. All Rights Reserved.</p>
     </footer>
     <script>
-        // Sample current bookings data
+  
         const currentBookings = [
             { restaurant: "The Gourmet Kitchen", guests: 4 },
             { restaurant: "Bella Italia", guests: 3 },
@@ -203,20 +203,19 @@ h2 {
             const restaurantName = document.getElementById('restaurant-name').value;
             const maxCustomers = parseInt(document.getElementById('max-customers').value);
 
-            // Calculate total booked customers for the entered restaurant
+            
             const totalBookedCustomers = currentBookings
                 .filter(booking => booking.restaurant === restaurantName)
                 .reduce((total, booking) => total + booking.guests, 0);
 
             const remainingCapacity = maxCustomers - totalBookedCustomers;
 
-            // Generate a random waiting time between 10 and 30 minutes
+       
             let waitingTime;
             if (remainingCapacity <= 0) {
-                waitingTime = Math.floor(Math.random() * (30 - 10 + 1)) + 10; // Random time between 10 and 30 minutes
+                waitingTime = Math.floor(Math.random() * (30 - 10 + 1)) + 10; 
             }
 
-            // Display the results
             const capacityResult = document.getElementById('capacity-result');
             const waitingTimeResult = document.getElementById('waiting-time-result');
 

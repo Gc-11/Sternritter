@@ -1,22 +1,21 @@
-/* Base body styling */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000;  /* Black background */
-    color: #FFD700;  /* Golden text */
+    background-color: #000000; 
+    color: #FFD700; 
     margin: 0;
     padding: 0;
 }
 
-/* Header styling */
+
 header {
     background-color: #000000;
     color: #FFD700;
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #fff;  /* White border at the bottom */
+    border-bottom: 2px solid #fff; 
 }
 
-/* Navigation styling */
 nav {
     background-color: #000000;
     padding: 10px;
@@ -36,7 +35,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #FFD700;  /* Golden color for links */
+    color: #FFD700; 
     text-decoration: none;
     font-weight: bold;
 }
@@ -45,11 +44,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Section styling */
+
 section {
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #fff;  /* White border at the bottom */
+    border-bottom: 2px solid #fff; 
 }
 
 h2 {
@@ -57,7 +56,7 @@ h2 {
     color: #FFD700;
 }
 
-/* Styling for the plans */
+
 .plans {
     display: flex;
     justify-content: space-around;
@@ -65,17 +64,17 @@ h2 {
 }
 
 .plan {
-    background-color: #000000;  /* Black background for plans */
+    background-color: #000000; 
     padding: 20px;
-    border: 2px solid #fff;  /* White border around the plan box */
+    border: 2px solid #fff; 
     border-radius: 8px;
     width: 200px;
-    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);  /* Subtle gold shadow */
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2);  
     transition: transform 0.2s ease;
 }
 
 .plan:hover {
-    transform: translateY(-5px);  /* Slight hover effect */
+    transform: translateY(-5px);  
 }
 
 .plan h3 {
@@ -91,7 +90,7 @@ h2 {
 .plan a {
     display: inline-block;
     margin-top: 15px;
-    background-color: #FFD700;  /* Golden button */
+    background-color: #FFD700;  
     color: #000000;
     padding: 10px;
     text-decoration: none;
@@ -100,10 +99,10 @@ h2 {
 }
 
 .plan a:hover {
-    background-color: #ffcc00;  /* Lighter gold on hover */
+    background-color: #ffcc00; 
 }
 
-/* Form styling */
+
 form {
     display: flex;
     flex-direction: column;
@@ -155,13 +154,13 @@ form button:hover {
     background-color: #ffcc00;
 }
 
-/* Footer styling */
+
 footer {
     background-color: #000000;
     color: #FFD700;
     text-align: center;
     padding: 10px;
-    position: absolute;  /* Changed to absolute position */
+    position: absolute; 
     width: 100%;
     bottom: 0;
     left: 0;

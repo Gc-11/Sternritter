@@ -1,6 +1,86 @@
-<html>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Platform</title>
+    <style> 
+        body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+main {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+</head>
 <body>
-    
+    <header>
+        <h1>Restaurant Booking Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#booking">Book a Table</a></li>
+                <li><a href="#admin">Admin Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="restaurants">
+            <h2>Search Restaurants</h2>
+            <input type="text" id="searchInput" placeholder="Search by name, cuisine, or location">
+            <button onclick="searchRestaurants()">Search</button>
+            <div id="restaurantList"></div>
+        </section>
+        <section id="booking">
+            <h2>Book a Table</h2>
+            <form id="bookingForm">
+                <input type="text" placeholder="Restaurant Name" required>
+                <input type="datetime-local" required>
+                <input type="number" placeholder="Number of Guests" required>
+                <button type="submit">Book Table</button>
+            </form>
+        </section>
+        <section id="admin">
+            <h2>Admin Dashboard</h2>
+            <button onclick="loadRestaurantData()">Load Restaurants</button>
+            <div id="adminData"></div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 Restaurant Booking Platform</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

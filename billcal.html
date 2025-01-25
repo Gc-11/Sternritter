@@ -29,24 +29,18 @@
             return;
         }
 
-        // Apply 10% discount
         let discount = 0.10 * billAmount;
         let discountedAmount = billAmount - discount;
 
-        // Subtract ₹200 as reservation charges refund
         let finalAmount = discountedAmount - 200;
 
-        // Display the final bill amount
         document.getElementById("result").innerHTML = "Final Bill after Discount and Refund of Reservation Charges: ₹" + finalAmount.toFixed(2);
 
-        // Show the proceed button
         document.getElementById("proceedButton").style.display = 'block';
     }
 
     function proceedToPayment() {
-        // Get the final bill amount to pass to the payment page
         let finalAmount = parseFloat(document.getElementById("result").innerText.replace("Final Bill after Discount and Refund of Reservation Charges: ₹", ""));
-        // Redirect to the payment page with the final amount as a URL parameter
         window.location.href = "pay2.html"
     }
 </script>

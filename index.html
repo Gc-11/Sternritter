@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f9;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        button {
-            padding: 10px 20px;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Restaurant Management</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Webpage</h1>
- 
+        <h1>Restaurant Management</h1>
+    </header>
+    <main>
+        <form id="restaurant-form">
+            <input type="text" id="name" placeholder="Restaurant Name" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <input type="text" id="cuisine" placeholder="Cuisine" required>
+            <input type="file" id="image" placeholder="image /*" required>
+            <button type="submit">Add Restaurant</button>
+        </form>
+        <div id="restaurant-list"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

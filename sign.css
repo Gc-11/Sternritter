@@ -1,33 +1,32 @@
-/* General Styling */
+
 body, html {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0A0A0A; /* Deep Black */
-    color: #EAEAEA; /* Light Gray for readability */
-    height: 100vh; /* Full height for centering */
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    background-color: #0A0A0A; 
+    color: #EAEAEA; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
-/* Sign Up Container Styling */
 .signup-container {
-    background-color: rgba(50, 50, 50, 0.8); /* Translucent grey */
+    background-color: rgba(50, 50, 50, 0.8); 
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-    width: 300px; /* Fixed width for the container */
-  /* Center text within the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+    width: 300px; 
+ 
 }
 
-/* Heading Styling */
+
 h1 {
-    color: #FFD700; /* Gold color for the heading */
-    margin-bottom: 20px; /* Space below the heading */
+    color: #FFD700; 
+    margin-bottom: 20px; 
 }
 
-/* Input and Button Styling */
+
 input, button {
     padding: 10px;
     align-items: center;
@@ -35,7 +34,7 @@ input, button {
     border: none;
     font-size: 1rem;
     margin: 5px 0;
-    width: 100%; /* Make inputs and button full width */
+    width: 100%; 
 }
 
 input {
@@ -61,13 +60,11 @@ button:hover {
     color: black;
 }
 
-/* Link Styling */
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Message Styling */
 #signupMessage {
     color: lightgreen;
     margin-top: 10px;

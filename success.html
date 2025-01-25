@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .success-container {
+            text-align: center;
+            background-color: #1a1a1a;
+            border: 5px solid white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.6);
+        }
+
+        .success-container h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .success-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .success-icon {
+            font-size: 100px;
+            color: gold;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            margin: 20px 0;
+            font-size: 18px;
+            color: white;
+        }
+
+        .back-btn {
+            background-color: gold;
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✔</div>
+        <h1>Payment Successful!</h1>
+        <p>Thank you for your payment. Your transaction was completed successfully.</p>
+        <div class="details">
+            <p><strong>Amount Paid:</strong> Rs. 200</p>
+            <p><strong>Transaction ID:</strong> 1234567890</p>
+        </div>
+        <a href="#" class="back-btn" onclick="goBack()">Go Back to Home</a>
+    </div>
+
+    <script>
+        function goBack() {
+            // Redirects to the payment page or any desired location
+            window.location.href = "payment-page.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CESTRO Restaurant Booking Dashboard</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="left-content">
+            <div class="logo">
+                <img src="images/log1.png" alt="CESTRO Logo" width="50" height="50">
+            </div>
+            <a href="test.html"><h1>CESTRO</h1></a>
+        </div>
+        <div class="right-content">
+            <button class="login-button"><a href="sign.html">Login</a></button>
+        </div>
+    </div>
+    
+    <!-- Main Navigation -->
+    <div>
+        <nav>
+            <ul align="center">
+                <li><a href="booking.html">View Bookings Total Bookings = 120 </a></li>
+                <li><a href="indexad.html">Memberships</a></li>
+                <li><a href="rate.html">Ratings</a></li>
+                <li><a href="profilead.html">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Admin Dashboard Section -->
+    <section id="admin-dashboard">
+        <h2>Admin Dashboard</h2>
+        <div class="dashboard">
+            <div class="card">
+                <h3>Total Bookings</h3>
+                <p>120</p>
+            </div>
+            <div class="card">
+                <h3>Pending Approvals</h3>
+                <p>5</p>
+            </div>
+            <div class="card">
+                <h3>Total Restaurants</h3>
+                <p>50</p>
+            </div>
+            <div class="card">
+                <h3>New Messages</h3>
+                <p>3</p>
+            </div>
+        </div>
+
+        <!-- Restaurant Management Section -->
+        <div class="management">
+            <h3>Manage Restaurants</h3>
+            <button onclick="window.location.href='index.html'">Add New Restaurant</button>
+            <button onclick="window.location.href='resli.html'">View All Restaurants</button>
+        </div>
+
+        <!-- Booking Management Section -->
+        <div class="management">
+            <h3>Manage Bookings</h3>
+            <button onclick="window.location.href='viewbookings.html'">View All Bookings</button>
+            <button onclick="window.location.href='bookingreports.html'">Booking Reports</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>©2025 CESTRO</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

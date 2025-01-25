@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body, html {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        header {
+            background-color: #222;
+            color: #FFD700; /* Yellow text */
+            padding: 20px 10px;
+            text-align: center;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #222;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        h2 {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 22px);
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            background-color: #111;
+            color: #FFD700;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #000;
+            color: #FFD700;
+            border: 1px solid #FFD700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            border-top: 3px solid #FFD700;
+            color: #FFD700;
+        }
+        body, html {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+header {
+    background-color: #222;
+    color: #FFD700; /* Yellow text */
+    padding: 20px 10px;
+    text-align: center;
+    border-bottom: 3px solid #FFD700;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #222;
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+
+h2 {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+#capacity-result {
+    margin-top: 20px;
+    color: #FFD700; /* Yellow text for result */
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CESTRO</h1>
+        <nav>
+            <ul>
+                <li><a href="#booking-form">Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Booking Form Section -->
+        <section id="booking-form">
+            <h2>Restaurant Bookings</h2>
+            <form id="restaurant-form">
+                <input type="text" id="restaurant-name" placeholder="Restaurant Name" required>
+                <input type="number" id="max-customers" placeholder="Maximum Number of Customers" required>
+                <button type="submit">Calculate Remaining Capacity and Waiting Time</button>
+            </form>
+            <div id="capacity-result"></div>
+            <div id="waiting-time-result"></div>
+        </section>
+    </main>
+    <footer>
+        <p>©2025CESTRO. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Sample current bookings data
+        const currentBookings = [
+            { restaurant: "The Gourmet Kitchen", guests: 4 },
+            { restaurant: "Bella Italia", guests: 3 },
+            { restaurant: "Sushi Haven", guests: 2 },
+            { restaurant: "Bistro Delight", guests: 5 }
+        ];
+
+        document.getElementById('restaurant-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const restaurantName = document.getElementById('restaurant-name').value;
+            const maxCustomers = parseInt(document.getElementById('max-customers').value);
+
+            // Calculate total booked customers for the entered restaurant
+            const totalBookedCustomers = currentBookings
+                .filter(booking => booking.restaurant === restaurantName)
+                .reduce((total, booking) => total + booking.guests, 0);
+
+            const remainingCapacity = maxCustomers - totalBookedCustomers;
+
+            // Generate a random waiting time between 10 and 30 minutes
+            let waitingTime;
+            if (remainingCapacity <= 0) {
+                waitingTime = Math.floor(Math.random() * (30 - 10 + 1)) + 10; // Random time between 10 and 30 minutes
+            }
+
+            // Display the results
+            const capacityResult = document.getElementById('capacity-result');
+            const waitingTimeResult = document.getElementById('waiting-time-result');
+
+            if (remainingCapacity < 0) {
+                capacityResult.innerHTML = `Error: Booked customers exceed maximum capacity for ${restaurantName}.`;
+                waitingTimeResult.innerHTML = `Estimated waiting time for ${restaurantName}: ${waitingTime} minutes`;
+            } else {
+                capacityResult.innerHTML = `Remaining seating capacity for ${restaurantName}: ${remainingCapacity}`;
+                waitingTimeResult.innerHTML = ''; // No waiting time if there are seats available
+            }
+        });
+    </script>
+</body>
+</html>
+

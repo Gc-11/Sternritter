@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cestro Payment</title>
+    <link rel="stylesheet" href="stylead.css">
+</head>
+<body>
+    <header>
+        <h1>Complete Your Payment</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="indexad.html">Home</a></li>
+            <li><a href="membershipad-plans.html">Membership Plans</a></li>
+            <li><a href="membershipad-benefits.html">Membership Benefits</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Payment Details</h2>
+        <form action="/submit-payment" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="restaurant">Restaurant Name:</label>
+            <input type="text" id="restaurant" name="restaurant" required>
+
+            <label for="plan">Membership Plan:</label>
+            <input type="text" id="plan" name="plan" value="selected_plan" readonly>
+
+            <label for="card">Credit Card Number:</label>
+            <input type="text" id="card" name="card" required>
+
+            <label for="expiry">Expiry Date:</label>
+            <input type="month" id="expiry" name="expiry" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <button type="submit">Pay Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cestro. All rights reserved.</p>
+    </footer>
+</body>
+</html>

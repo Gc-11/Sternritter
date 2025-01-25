@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      color: #ffd700; /* Gold text color */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      max-width: 400px;
+      border: 1px solid #ffffff; /* White border */
+      background: #000000; /* Black background */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .details {
+      margin-bottom: 20px;
+    }
+    .details p {
+      margin: 5px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #ffd700; /* Gold button background */
+      color: #000000; /* Black text on button */
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #ffc107; /* Slightly lighter gold on hover */
+    }
+    .send-btn {
+      background-color: #28a745; /* Green button for sending */
+      color: #ffffff; /* White text on send button */
+      margin-top: 20px; /* Added top margin to place it below the done button */
+    }
+    .send-btn:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Booking Confirmed</h1>
+    <div class="details">
+      <p><strong>Restaurant:</strong> [Restaurant Name]</p>
+      <p><strong>Date:</strong> [Reservation Date]</p>
+      <p><strong>Time:</strong> [Reservation Time]</p>
+      <p><strong>Booked By:</strong> [Customer Name]</p>
+      <p><strong>Number of Guests:</strong> [Number of Guests]</p> <!-- Added guests section -->
+    </div>
+    
+    <!-- Done Button -->
+    <a href="#" class="btn">Done</a>
+    
+    <!-- Send Reservation Copy Button (Green) -->
+    <div class="send-reservation">
+      <a href="#" class="btn send-btn">Send Reservation Copy via Email & SMS</a>
+    </div>
+  </div>
+</body>
+</html>

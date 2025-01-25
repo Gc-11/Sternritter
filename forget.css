@@ -1,0 +1,77 @@
+/* General Styling */
+body, html {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0A0A0A; /* Deep Black */
+    color: #EAEAEA; /* Light Gray for readability */
+    height: 100vh; /* Full height for centering */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Forgot Password Container Styling */
+.forgot-password-container {
+    background-color: rgba(50, 50, 50, 0.8); /* Translucent grey */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    width: 300px; /* Fixed width for the container */
+    text-align: center; /* Center text within the container */
+}
+
+/* Heading Styling */
+h1 {
+    color: #FFD700; /* Gold color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Input and Button Styling */
+input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    margin: 5px 0;
+    width: 100%; /* Make inputs and button full width */
+}
+
+input {
+    background: #222;
+    color: white;
+    border: 1px solid #FFD700;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+button {
+    background: #FFD700;
+    color: #0A0A0A;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+/* Link Styling */
+a {
+    color: #FFD700; /* Gold color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Message Styling */
+#forgotPasswordMessage {
+    color: lightgreen;
+    margin-top: 10px;
+}

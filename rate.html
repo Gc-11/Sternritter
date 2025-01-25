@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Review Page</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    margin: 0;
+    padding: 20px;
+}
+
+.review-container {
+    background: #222; /* Darker background for the container */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #FFD700; /* Yellow color for the title */
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc; /* Light gray stars */
+}
+
+.star.selected {
+    color: #FFD700; /* Yellow stars when selected */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #FFD700; /* Yellow border */
+    border-radius: 5px;
+    background-color: #333; /* Dark background for textarea */
+    color: #fff; /* White text */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFD700; /* Yellow button */
+    color: black; /* Black text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFC107; /* Slightly darker yellow on hover */
+}
+
+#review-output {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="review-container">
+        <h1>Customer Reviews</h1>
+        <input type="text" id="restaurant-name" placeholder="Enter Restaurant Name" />
+        <div class="rating">
+            <span class="star" data-value="1">&#9734;</span>
+            <span class="star" data-value="2">&#9734;</span>
+            <span class="star" data-value="3">&#9734;</span>
+            <span class="star" data-value="4">&#9734;</span>
+            <span class="star" data-value="5">&#9734;</span>
+        </div>
+        <textarea id="review-text" placeholder="Write your review here..." rows="4"></textarea>
+        <button id="submit-review">Submit Review</button>
+        <div id="review-output"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star');
+    let rating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            rating = this.getAttribute('data-value');
+            updateStars();
+        });
+    });
+
+    function updateStars() {
+        stars.forEach(star => {
+            star.classList.remove('selected');
+            if (star.getAttribute('data-value') <= rating) {
+                star.classList.add('selected');
+            }
+        });
+    }
+
+    document.getElementById('submit-review').addEventListener('click', function() {
+        const reviewText = document.getElementById('review-text').value;
+        const reviewOutput = document.getElementById('review-output');
+
+        if (rating > 0 && reviewText.trim() !== '') {
+            const review = document.createElement('div');
+            review.innerHTML = `<strong style="color: #FFD700;">Rating: ${rating} Stars</strong><p>${reviewText}</p>`;
+            reviewOutput.appendChild(review);
+            document.getElementById('review-text').value = '';
+            rating = 0;
+            updateStars();
+        } else {
+            alert('Please provide a rating and a review.');
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

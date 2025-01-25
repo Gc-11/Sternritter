@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .payment-container {
+            width: 900px;
+            height: 650px;
+            background-color: #1a1a1a;
+            color: gold;
+            display: flex;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+
+        .payment-options {
+            width: 40%;
+            border-right: 2px solid white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .payment-option {
+            padding: 15px;
+            margin: 15px 0;
+            width: 90%;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            background-color: black;
+        }
+
+        .payment-option:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        .content-area {
+            width: 60%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            display: none;
+            background-color: #333;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .content img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        select, input {
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid white;
+            background-color: black;
+            color: gold;
+            box-sizing: border-box;
+        }
+
+        .card-input-group {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .card-input-group input {
+            flex: 1;
+        }
+
+        .submit-btn {
+            background-color: gold;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #ffcc00;
+        }
+
+        .amount-display {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <!-- Payment Options -->
+        <div class="payment-options">
+            <div class="amount-display">Rs. 200</div>
+            <div class="payment-option" onclick="showContent('netBankingContent')">
+                Net Banking
+            </div>
+            <div class="payment-option" onclick="showContent('upiContent')">
+                UPI Payment
+            </div>
+            <div class="payment-option" onclick="showContent('scannerContent')">
+                UPI Scanner
+            </div>
+            <div class="payment-option" onclick="showContent('cardContent')">
+                Credit/Debit Card
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Net Banking -->
+            <div id="netBankingContent" class="content">
+                <h2>Net Banking</h2>
+                <select>
+                    <option value="" disabled selected>Select Bank</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Axis Bank</option>
+                    <option>State Bank of India</option>
+                    <option>Punjab National Bank</option>
+                </select>
+            <a href="success.html"><button class="submit-btn">Proceed</button></a>
+            </div>
+
+            <!-- UPI Payment -->
+            <div id="upiContent" class="content">
+                <h2>UPI Payment</h2>
+                <input type="text" placeholder="Enter UPI ID">
+                <a href="success.html"><button class="submit-btn">Pay Now</button></a>
+            </div>
+
+            <!-- UPI Scanner -->
+            <div id="scannerContent" class="content">
+                <h2>Scan with UPI App</h2>
+                <a href="success.html"><img src="https://via.placeholder.com/250" alt="QR Code"></a>
+            </div>
+
+            <!-- Card Payment -->
+            <div id="cardContent" class="content">
+                <h2>Credit/Debit Card</h2>
+                <input type="text" placeholder="Card Number">
+                <div class="card-input-group">
+                    <input type="text" placeholder="MM/YY">
+                    <input type="text" placeholder="CVV">
+                </div>
+                <input type="text" placeholder="Cardholder Name">
+                <a href="success.html"><button class="submit-btn">Pay Now</button> </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(contentId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

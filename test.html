@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CESTRO Restaurant Booking Dashboard</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="left-content">
+            <div class="logo">
+                <img src="images/log1.png" alt="CESTRO Logo" width="50" height="50">
+            </div>
+            <a href="test.html"><h1>CESTRO</h1></a>
+        </div>
+        <div class="right-content">
+            <button class="login-button"><a href="sign.html">Login</a></button>
+        </div>
+    </div>
+    
+    
+     
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            const userType = localStorage.getItem("userType");
+
+            // You can use loggedInUser and userType as needed, e.g., for personalized content or access control
+            if (loggedInUser && userType) {
+                console.log(`${loggedInUser} logged in as ${userType}`);
+            } else {
+                // Redirect back to login if no user is logged in
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+    
+
+    <!-- Main Navigation -->
+    <div>
+        <nav>
+            <ul align="center">
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="bookmain.html">Book a Table</a></li>
+                <li><a href="booking.html">View Bookings</a></li>
+                <li><a href="tables.html">Tables</a></li>
+                <li><a href="payment.html">Memberships</a></li>
+                <li><a href="rate.html">Ratings</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2>Discover the Best Restaurants in Town</h2>
+                <p>Find and book your perfect dining experience at top-rated restaurants.</p>
+                <h3>
+                    Check out our featured restaurants below or search for your favorite cuisine. 
+                </h3>
+                <hr>
+                <h2>FEATURED RESTAURANTS</h2>   
+                <section class="card-grid">
+
+                        <div class="card">
+                            <a href="gor.html"><img src="images/gor10.jpg" alt="Italian Cuisine"></a>
+                            <h3>The Gourmet Kitchen</h3>
+                            <p>Discover exquisite culinary creations at The Gourmet Kitchen, where passion meets precision in every dish.</p>
+                        </div>
+                        <div class="card">
+                            <a href="sushi.html"><img src="images/su1.jpg" alt="Fine Dining"></a>
+                            <h3>Sushi Haven</h3>
+                            <p>Embark on a culinary journey of authentic Japanese flavors at Sushi Haven, where artistry meets exceptional quality.</p>        
+                    
+                        </div>
+                        <div class="card">
+                            <a href="bistro.html"><img src="images/b1.jpg" alt="Fine Dining"></a>
+                            <h3>Bistro Delight</h3>
+                            <p>Indulge in a charming ambiance and savor delectable French-inspired cuisine at Bistro Delight.</p>        
+                    
+                        </div>
+       
+            </section>
+
+        <section id="restaurants" align="left">
+            <h2>Search Restaurants</h2>
+            <input type="text" id="searchInput" placeholder="Search by name, cuisine, or location">
+            <button onclick="searchRestaurants()">Search</button>
+            <div id="restaurantList"></div>
+            <h2>LIST OF RESTAURANTS AND REVIEWS </h2>
+            <a href="resli.html">Load Restaurants</a>
+        </section>
+
+    
+             
+
+            </section>
+        
+            <!-- Restaurant Highlights Section -->
+            <section class="card-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <a href="italian.html"><img src="images/autitalian.jpg" alt="Italian Cuisine"></a>
+                    <h3>Authentic Italian Cuisine</h3>
+                    <p>Enjoy hand-crafted pasta, wood-fired pizzas, and more from Italy's finest chefs.</p>
+                </div>
+        
+                <!-- Card 2 -->
+                <div class="card">
+                    <a href="fine-dining.html"><img src="images/luxury2.jpg" alt="Fine Dining"></a>
+                    <h3>Luxury Fine Dining</h3>
+                    <p>Experience elegant ambiance, gourmet dishes, and world-class service.</p>
+                </div>
+        
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="images/south.jpg" alt="South Indian Cuisine">
+                    <h3>South Indian Delicacies</h3>
+                    <p>Enjoy crispy dosas, fluffy idlis, sambar, and coconut chutneys.</p>
+                </div>  
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <img src="images/vegan2.jpg" alt="Vegan Options">
+                    <h3>Vegan & Healthy Options</h3>
+                    <p>Delicious plant-based meals and nutritious dining choices for a healthier lifestyle.</p>
+                </div>
+        
+                <!-- Card 5 -->
+                <div class="card">
+                    <img src="images/buffet2.jpg" alt="Buffet">
+                    <h3>Unlimited Buffets</h3>
+                    <p>Indulge in all-you-can-eat buffets with a variety of dishes to choose from.</p>
+                </div>
+        
+                <!-- Card 6 -->
+                <div class="card">
+                    <img src="images/family2.jpg" alt="Family Dining">
+                    <h3>Family-Dining Restaurants</h3>
+                    <p>Enjoy a cozy dining experience perfect for families and large groups.</p>
+                </div>
+        
+                <!-- Card 7 -->
+                <div class="card">
+                    <img src="images/sea1.jpg" alt="Seafood">
+                    <h3>Fresh Seafood</h3>
+                    <p>Experience the finest selection of seafood dishes made with fresh ingredients.</p>
+                </div>
+        
+                <!-- Card 8 -->
+                <div class="card">
+                    <img src="images/tan.jpg" alt="Tandoori"> <img src="images/bir.jpg" alt="Tandoori">
+                    <h3>Tandoori & Biryani</h3>
+                    <p>Marinated meats & veggies, cooked to perfection in a traditional clay oven.
+                        Fragrant basmati rice with tender meats, paired with smoky grilled kebabs.
+                    </p>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="card">
+                    <img src="images/ca1.jpg" alt="Cafés">
+                    <h3>Cozy Cafés</h3>
+                    <p>Enjoy a relaxing atmosphere with freshly brewed coffee and delicious pastries.</p>
+                </div>
+        
+                <!-- Card 10 -->
+
+                <div class="card">
+                    <img src="images/street1.jpg" alt="Street Food">
+                    <h3>Local Street Food</h3>
+                    <p>Explore a variety of flavorful street food from different cultures.</p>
+                </div>
+        
+                <div class="card">
+                    <img src="images/rjt.jpg" alt="Rajasthani Thali">
+                    <h3>Rajasthani Thali</h3>
+                    <p>Enjoy dal baati churma, gatte ki sabzi, and traditional Rajasthani feasts.</p>
+                </div>
+
+
+                <!-- Card 12 -->
+                <div class="card">
+                    <img src="images/des.jpg" alt="Dessert Shops">
+                    <h3>Dessert Shops</h3>
+                    <p>Indulge in a sweet selection of cakes, pastries, ice creams, and chocolates.</p>
+                </div>
+            </section>
+  
+        
+        
+
+
+    <footer>
+        <p>©2025 CESTRO</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
+

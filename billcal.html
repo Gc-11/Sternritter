@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Calculator</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+
+        <h3><a href="test.html">Back To Dashboard</a></h3>
+<div class="container">
+    <h2>Bill Calculator</h2>
+    <label for="billAmount">Enter the Bill Amount (in Rupees):</label>
+    <input type="number" id="billAmount" placeholder="Enter amount" required>
+
+    <button onclick="calculateDiscount()">Calculate Discount</button>
+
+    <div class="result" id="result"></div>
+    <button class="proceed-btn" id="proceedButton" style="display: none;" onclick="proceedToPayment()">Proceed to Bill Payment</button>
+</div>
+
+<script>
+    function calculateDiscount() {
+        let billAmount = parseFloat(document.getElementById("billAmount").value);
+
+        if (isNaN(billAmount) || billAmount <= 0) {
+            alert("Please enter a valid bill amount.");
+            return;
+        }
+
+        // Apply 10% discount
+        let discount = 0.10 * billAmount;
+        let discountedAmount = billAmount - discount;
+
+        // Subtract ₹200 as reservation charges refund
+        let finalAmount = discountedAmount - 200;
+
+        // Display the final bill amount
+        document.getElementById("result").innerHTML = "Final Bill after Discount and Refund of Reservation Charges: ₹" + finalAmount.toFixed(2);
+
+        // Show the proceed button
+        document.getElementById("proceedButton").style.display = 'block';
+    }
+
+    function proceedToPayment() {
+        // Get the final bill amount to pass to the payment page
+        let finalAmount = parseFloat(document.getElementById("result").innerText.replace("Final Bill after Discount and Refund of Reservation Charges: ₹", ""));
+        // Redirect to the payment page with the final amount as a URL parameter
+        window.location.href = "pay2.html"
+    }
+</script>
+
+</body>
+</html>

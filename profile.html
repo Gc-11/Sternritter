@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CESTRO Profile</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <main>
+        <hr>
+        <h2>Your Profile</h2>
+
+        <!-- Profile Information Section -->
+        <div id="profileInfo">
+            <h3>Full Name: <span id="fullName">John Doe</span></h3>
+            <p>Email: <span id="email">johndoe@example.com</span></p>
+            <p>Phone: <span id="phone">+1234567890</span></p>
+            <p>Address: <span id="address">123 Main Street, Cityville</span></p>
+            <p>Membership: <span id="membership">Plat Member</span></p>
+        </div>
+
+        <!-- Edit Profile Button -->
+        <button id="editProfileButton">Edit Profile</button>
+
+        <!-- Edit Profile Form (Initially Hidden) -->
+        <div id="editProfileForm" style="display:none;">
+            <h3>Edit Profile</h3>
+            <form id="profileForm">
+                <label for="editFullName">Full Name:</label>
+                <input type="text" id="editFullName" value="John Doe" required>
+
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" value="johndoe@example.com" required>
+
+                <label for="editPhone">Phone:</label>
+                <input type="tel" id="editPhone" value="+1234567890" required>
+
+                <label for="editAddress">Address:</label>
+                <input type="text" id="editAddress" value="123 Main Street, Cityville" required>
+
+                <label for="editMembership">Membership:</label>
+                <select id="editMembership" required>
+                    <option value="Gold Member" selected>Plat Member</option>
+                    <option value="Bronze Member">Bronze Member</option>
+                </select>
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+
+        <div id="BD">
+            <h3><a href="test.html">Back To Dashboard</a></h3>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

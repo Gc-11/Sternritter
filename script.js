@@ -15,7 +15,7 @@ document.getElementById('restaurant-form').addEventListener('submit', function(e
     }
     
     if (file) {
-        reader.readAsDataURL(file); // Convert the image file to a base64 URL
+        reader.readAsDataURL(file); 
     }
 });
 
@@ -43,12 +43,11 @@ function editRestaurant(button) {
     const cuisine = restaurantCard.querySelector('p:nth-of-type(2)').innerText.split(': ')[1];
     const image = restaurantCard.querySelector('img').src;
 
-    // Populate the form with the current restaurant details
     document.getElementById('name').value = name;
     document.getElementById('location').value = location;
     document.getElementById('cuisine').value = cuisine;
     const imageInput = document.getElementById('image');
-    imageInput.value = ''; // Clear the file input
+    imageInput.value = ''; 
     const img = new Image();
     img.src = image;
     img.onload = function() {
@@ -65,7 +64,6 @@ function editRestaurant(button) {
         });
     };
 
-    // Remove the restaurant card to avoid duplicates
     restaurantCard.remove();
 }
 

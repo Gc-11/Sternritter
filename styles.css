@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #000; /* Black background */
-    color: #FFD700; /* Yellow text */
+    background-color: #000; 
+    color: #FFD700; 
     margin: 0;
     padding: 20px;
 }
@@ -21,28 +21,28 @@ form {
 input {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #FFD700; /* Yellow border */
+    border: 1px solid #FFD700; 
     border-radius: 5px;
-    background-color: #333; /* Dark background for inputs */
-    color: #FFD700; /* Yellow text for inputs */
+    background-color: #333; 
+    color: #FFD700; 
 }
 
 button {
     padding: 10px;
-    background-color: #FFD700; /* Yellow button */
-    color: black; /* Black text for button */
+    background-color: #FFD700; 
+    color: black; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #FFC300; /* Lighter yellow on hover */
+    background-color: #FFC300; 
 }
 
 .restaurant-card {
-    background-color: #222; /* Dark background for restaurant cards */
-    border: 1px solid #FFD700; /* Yellow border for restaurant cards */
+    background-color: #222; 
+    border: 1px solid #FFD700; 
     border-radius: 5px;
     padding: 15px;
     margin: 10px 0;
@@ -55,7 +55,7 @@ button:hover {
 }
 
 .delete-button {
-    background-color: #dc3545; /* Red delete button */
+    background-color: #dc3545; 
     color: white;
     border: none;
     padding: 5px 10px;
@@ -64,5 +64,5 @@ button:hover {
 }
 
 .delete-button:hover {
-    background-color: #c82333; /* Darker red on hover */
+    background-color: #c82333; 
 }

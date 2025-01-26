@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Improved Search Functionality
     function searchRestaurants() {
         const input = document.getElementById('searchInput').value.trim();
         const resultDiv = document.getElementById('restaurantList');
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
     }
 
-    // Booking Form Submission with Validation
     function handleBookingFormSubmit(event) {
         event.preventDefault();
 
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         message.innerHTML = '<p style="color: lightgreen;">Table booked successfully!</p>';
 
-        // Simulating booking entry (in real apps, send data to a server)
         const bookingTable = document.getElementById('bookingTable');
         const newRow = bookingTable.insertRow();
         newRow.innerHTML = `
@@ -44,15 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
             <td style="color: lightgreen;">Confirmed</td>
         `;
 
-        // Clear form fields after submission
         setTimeout(() => {
             document.getElementById('bookingForm').reset();
             message.innerHTML = '';
         }, 3000);
     }
 
-
-    // Load Bookings Data into Table
+    
     function loadBookings() {
         const tableBody = document.getElementById("bookingTable");
         tableBody.innerHTML = "";
@@ -77,18 +72,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const bookingForm = document.getElementById("bookingForm");
         const bookingTableBody = document.getElementById("bookingTableBody");
     
-        let bookingID = 1; // Keeps track of booking IDs
+        let bookingID = 1; 
     
-        // Handle form submission to add bookings
         bookingForm.addEventListener("submit", (event) => {
-            event.preventDefault(); // Prevent form from refreshing the page
+            event.preventDefault(); 
     
             const restaurantName = document.getElementById("restaurantName").value;
             const bookingDate = document.getElementById("bookingDate").value;
             const guestCount = document.getElementById("guestCount").value;
     
             if (restaurantName && bookingDate && guestCount) {
-                // Add booking row to the table
                 const row = document.createElement("tr");
                 row.innerHTML = `
                     <td>${bookingID}</td>
@@ -102,14 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
     
                 bookingTableBody.appendChild(row);
-                bookingID++; // Increment booking ID for next entry
-    
-                // Reset form and show success message
+                bookingID++; 
                 bookingForm.reset();
                 document.getElementById("bookingMessage").textContent = "Booking added successfully!";
                 setTimeout(() => {
                     document.getElementById("bookingMessage").textContent = "";
-                }, 2000); // Clear message after 2 seconds
+                }, 2000); 
             }
         });
     });
@@ -119,20 +110,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const bookingTableBody = document.getElementById("bookingTableBody");
         const bookingMessage = document.getElementById("bookingMessage");
     
-        let bookingID = 1; // Unique ID for each booking
-    
-        // Handle form submission
+        let bookingID = 1; 
         bookingForm.addEventListener("submit", (event) => {
-            event.preventDefault(); // Prevent page reload
-    
-            // Get form values
+            event.preventDefault();  
             const restaurantName = document.getElementById("restaurantName").value.trim();
             const bookingDate = document.getElementById("bookingDate").value; 
             const guestCount = document.getElementById("guestCount").value;
     
-            // Validate inputs
             if (restaurantName && bookingDate && guestCount > 0) {
-                // Create a new row in the table
                 const row = document.createElement("tr");
                 row.innerHTML = `
                     <td>${bookingID}</td>
@@ -145,22 +130,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     </td>
                 `;
     
-                // Append row to the table body
                 bookingTableBody.appendChild(row);
     
-                // Increment booking ID
                 bookingID++;
     
-                // Reset the form
                 bookingForm.reset();
     
-                // Show success message
                 bookingMessage.textContent = "Booking added successfully!";
                 setTimeout(() => {
                     bookingMessage.textContent = "";
                 }, 2000);
             } else {
-                // Show error message
                 bookingMessage.textContent = "Please fill in all fields correctly!";
                 setTimeout(() => {
                     bookingMessage.textContent = "";
@@ -169,18 +149,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     
-    // Delete a booking
     function deleteBooking(id, element) {
-        // Confirm deletion
         const confirmDelete = confirm(`Are you sure you want to delete booking ID ${id}?`);
         if (confirmDelete) {
-            // Remove the row from the table
             const row = element.closest("tr");
             row.remove();
         }
     }
     
-    // Edit a booking (this is just a placeholder; implement modal logic here)
     function editBooking(id) {
         alert(`Editing booking with ID: ${id}`);
     }
@@ -189,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Open Edit Modal & Fill Form
     function editBooking(id) {
         const booking = bookings.find(b => b.id === id);
 
@@ -203,12 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("editBookingModal").style.display = "block";
     }
 
-    // Close Modal
     function closeModal() {
         document.getElementById("editBookingModal").style.display = "none";
     }
 
-    // Handle Edit Form Submission
     function handleEditBookingSubmit(event) {
         event.preventDefault();
 
@@ -222,75 +195,64 @@ document.addEventListener("DOMContentLoaded", function () {
             status: document.getElementById("editBookingStatus").value
         };
 
-        // Update the booking in the array
         let index = bookings.findIndex(b => b.id === updatedBooking.id);
         if (index !== -1) {
             bookings[index] = updatedBooking;
         }
 
-        // Reload the table and close modal
         loadBookings();
         closeModal();
     }
 
-    // Handle Login Form Submission
     function handleLoginFormSubmit(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault(); 
 
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-        const userType = document.getElementById("userType").value; // Restaurant or Customer
+        const userType = document.getElementById("userType").value; 
 
-        // Basic login validation (Replace with actual authentication logic)
         if (username.trim() !== "" && password.trim() !== "") {
             localStorage.setItem("loggedInUser", username);
             localStorage.setItem("userType", userType);
 
-            // Redirect to test.html
             window.location.href = "test.html";
         } else {
             document.getElementById("loginMessage").innerText = "Invalid credentials! Try again.";
         }
     }
 
-    // Event Listeners
     document.getElementById("bookingForm").addEventListener("submit", handleBookingFormSubmit);
     document.getElementById("editBookingForm").addEventListener("submit", handleEditBookingSubmit);
     document.getElementById("loginForm").addEventListener("submit", handleLoginFormSubmit);
 
 
-    // Expose functions to global scope
     window.searchRestaurants = searchRestaurants;
     window.loadRestaurantData = loadRestaurantData;
     window.loadBookings = loadBookings;
 });
 document.addEventListener("DOMContentLoaded", function () {
-    // Login Form Submission
     const loginForm = document.getElementById("loginForm");
 
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
 
             const userType = document.getElementById("userType").value;
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Basic login validation (Replace with actual authentication logic)
             if (username.trim() !== "" && password.trim() !== "") {
                 localStorage.setItem("loggedInUser", username);
                 localStorage.setItem("userType", userType);
                 
-                // Close the login modal and redirect
                 document.getElementById("loginModal").style.display = "none";
-                window.location.href = "test.html";  // Redirect to a protected page
+                window.location.href = "test.html";  
             } else {
                 document.getElementById("loginMessage").innerText = "Invalid credentials! Try again.";
             }
         });
     }
 
-    // Close Login Modal if clicked outside
     window.onclick = function (event) {
         const modal = document.getElementById("loginModal");
         if (event.target == modal) {
@@ -298,7 +260,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Simulate Restaurant Search (for demonstration)
     window.searchRestaurants = function () {
         const input = document.getElementById("searchInput").value.trim();
         const resultDiv = document.getElementById("restaurantList");
@@ -358,8 +319,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("profile").style.display = "none";
     }
 
-
-    //////for the profile editing
          
             document.getElementById('editProfileButton').addEventListener('click', function() {
     

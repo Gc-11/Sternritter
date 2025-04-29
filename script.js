@@ -350,3 +350,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('editProfileButton').style.display = 'block';
             });
     
+        document.addEventListener("DOMContentLoaded", function () {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            const userType = localStorage.getItem("userType");
+
+            // You can use loggedInUser and userType as needed, e.g., for personalized content or access control
+            if (loggedInUser && userType) {
+                console.log(`${loggedInUser} logged in as ${userType}`);
+            } else {
+                // Redirect back to login if no user is logged in
+                window.location.href = "login.html";
+            }
+        });
+
+    
